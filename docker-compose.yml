@@ -1,0 +1,23 @@
+version: '2'
+
+services:
+  web:
+    build: ./dockers/webserver
+    image: web_yand_news
+    ports:
+      - "3000:3000"
+    volumes: 
+      - ./dockers/webserver/www:/home/rails_user/www
+    links:
+      - postgres
+       
+  postgres:
+    image: postgres:9.6.2-alpine
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_PASSWORD: test
+      POSTGRES_USER: test
+      POSTGRES_DB: news
+
+
