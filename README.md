@@ -7,7 +7,7 @@ Web-приложение должно корректно работать в б�
 
 
 ## Installation
-docker-compose build
-docker-compose up -d
-docker exec testwork_web_1  bash -l -c "bundle exec rake db:migrate"
-docker exec testwork_web_1  bash -l -c "bundle exec rspec spec/models/article_spec.rb"
+* `docker-compose build`
+* `docker-compose up -d`
+* `docker exec testwork_web_1  bash -l -c "bundle exec rake db:migrate"`
+* `docker exec testwork_web_1  bash -l -c "bundle exec rspec spec/models/article_spec.rb"`
