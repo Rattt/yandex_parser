@@ -6,13 +6,12 @@ module YaNews
     def execute
       begin
         news_info = first_article
+        ::YaNews::Set.new(news_info).execute
       rescue StandardError => e
         logger = LogConnect.get
         logger.error 'YaNews::GetParse: ошибка может быть вызвана устареванием селектора'
         logger.error "YaNews::GetParse: #{e.message}"
       end
-      news_info
-      ::YaNews::Set.new(news_info).execute
     end
 
     private
