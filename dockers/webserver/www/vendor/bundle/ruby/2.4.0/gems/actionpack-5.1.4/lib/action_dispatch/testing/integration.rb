@@ -71,7 +71,7 @@ module ActionDispatch
       include TestProcess, RequestHelpers, Assertions
 
       %w( status status_message headers body redirect? ).each do |method|
-        delegate method, to: :response, allow_nil: true
+        delegate method, to: :responses, allow_nil: true
       end
 
       %w( path ).each do |method|

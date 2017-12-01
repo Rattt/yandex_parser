@@ -215,7 +215,7 @@ module ActionController
             [true, false].any? do |password_is_ha1|
               _uri = trailing_question_mark ? uri + "?" : uri
               expected = expected_response(method, _uri, credentials, password, password_is_ha1)
-              expected == credentials[:response]
+              expected == credentials[:responses]
             end
           end
         end
@@ -235,7 +235,7 @@ module ActionController
       end
 
       def encode_credentials(http_method, credentials, password, password_is_ha1)
-        credentials[:response] = expected_response(http_method, credentials[:uri], credentials, password, password_is_ha1)
+        credentials[:responses] = expected_response(http_method, credentials[:uri], credentials, password, password_is_ha1)
         "Digest " + credentials.sort_by { |x| x[0].to_s }.map { |v| "#{v[0]}='#{v[1]}'" }.join(", ")
       end
 

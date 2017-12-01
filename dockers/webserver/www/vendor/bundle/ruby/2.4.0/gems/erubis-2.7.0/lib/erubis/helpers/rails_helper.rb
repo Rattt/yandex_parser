@@ -233,7 +233,7 @@ if ActionPack::VERSION::MAJOR >= 2             ### Rails 2.X
         if template_requires_setup?(extension)
           body = case extension.to_sym
             when :rxml, :builder
-              content_type_handler = (controller.respond_to?(:response) ? "controller.response" : "controller")
+              content_type_handler = (controller.respond_to?(:responses) ? "controller.response" : "controller")
               "#{content_type_handler}.content_type ||= Mime::XML\n" +
               "xml = Builder::XmlMarkup.new(:indent => 2)\n" +
               template +
