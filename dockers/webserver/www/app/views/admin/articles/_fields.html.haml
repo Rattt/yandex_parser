@@ -1,0 +1,5 @@
+= f.text_field :title
+= f.text_area  :description, hide_label: true, placeholder: "Write a news description..."
+= f.datetime_select :expired_at, default: DateTime.now
+%hr
+= f.submit class: 'btn btn-success'

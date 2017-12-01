@@ -1,0 +1,5 @@
+# Logfile created on 2017-11-30 14:21:12 +0000 by logger.rb/56815
+2017-11-30T14:21:14.918Z 362 TID-gohepxyt8 INFO: Booting Sidekiq 5.0.5 with redis options {:host=>"redis", :password=>"REDACTED", :db=>"2", :id=>"Sidekiq-server-PID-362", :url=>nil}
+2017-11-30T14:21:15.133Z 362 TID-gohepxyt8 INFO: Running in ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux]
+2017-11-30T14:21:15.133Z 362 TID-gohepxyt8 INFO: See LICENSE and the LGPL-3.0 for licensing details.
+2017-11-30T14:21:15.133Z 362 TID-gohepxyt8 INFO: Upgrade to Sidekiq Pro for more features and support: http://sidekiq.org

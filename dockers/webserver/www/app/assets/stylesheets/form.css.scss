@@ -1,0 +1,19 @@
+rails-bootstrap-forms-date-select select,
+.rails-bootstrap-forms-time-select select,
+.rails-bootstrap-forms-datetime-select select {
+  display: inline-block;
+  width: auto;
+}
+
+.rails-bootstrap-forms-error-summary {
+  margin-top: 10px;
+}
+.new_article,.edit_article {
+  input,textarea {
+    width: 100%;
+  }
+  input.btn{
+    width: 150px;
+  }
+}
+

@@ -6,10 +6,15 @@ services:
     image: web_yand_news
     ports:
       - "3000:3000"
+      - "1048:1048"
     volumes: 
       - ./dockers/webserver/www:/home/rails_user/www
     links:
       - postgres
+      - postgres_test
+      - redis
+    env_file:
+      - '.env'
        
   postgres:
     image: postgres:9.6.2-alpine
@@ -20,4 +25,22 @@ services:
       POSTGRES_USER: test
       POSTGRES_DB: news
 
+  postgres_test:
+    image: postgres:9.6.2-alpine
+    volumes:
+      - ./db:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_PASSWORD: test
+      POSTGRES_USER: test
+      POSTGRES_DB: news
 
+  redis:
+    build: ./dockers/redis
+    ports:
+      - '6379:6379'
+    environment:
+        REDIS_PASSWORD: 3443555
+    
+
+ 
+  

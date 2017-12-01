@@ -1,0 +1,16 @@
+%header.bg-primary.text-white
+  .container.text-center
+    %h1
+      = @article.title
+    %p.lead
+    %p{class: (@article.is_yandex ? 'ya' : 'ya hidden')}Новость была добавлена с Yandex News
+    %p{class: (@article.is_yandex ? 'no_ya hidden' : 'no_ya')}Новость была создана редакцией
+
+%section#about
+  .container
+    .row
+      .col-lg-8.mx-auto
+        %h2
+          = @article.title
+        %p.lead.article_text
+          = @article.description

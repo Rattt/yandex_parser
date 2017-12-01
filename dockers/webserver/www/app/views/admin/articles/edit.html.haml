@@ -1,0 +1,6 @@
+%section.container
+  %h1 Editing article
+
+  = bootstrap_form_for @article, label_col: 'col-xs-4', control_col: 'col-xs-10', url: admin_article_path(id: @article.id) do |f|
+    = render 'fields', f: f
+  = link_to 'Back', admin_articles_path, class: 'btn btn-primary text-center'

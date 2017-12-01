@@ -1,0 +1,16 @@
+current directory: /home/ivan/1_projects/test_work/dockers/webserver/www/vendor/bundle/ruby/2.4.0/gems/xxhash-0.4.0/ext/xxhash
+/home/ivan/.rbenv/versions/2.4.1/bin/ruby -r ./siteconf20171128-19293-17svbz6.rb extconf.rb
+creating Makefile
+
+current directory: /home/ivan/1_projects/test_work/dockers/webserver/www/vendor/bundle/ruby/2.4.0/gems/xxhash-0.4.0/ext/xxhash
+make "DESTDIR=" clean
+
+current directory: /home/ivan/1_projects/test_work/dockers/webserver/www/vendor/bundle/ruby/2.4.0/gems/xxhash-0.4.0/ext/xxhash
+make "DESTDIR="
+compiling libxxhash.c
+compiling xxhash.c
+linking shared-object xxhash/xxhash.so
+
+current directory: /home/ivan/1_projects/test_work/dockers/webserver/www/vendor/bundle/ruby/2.4.0/gems/xxhash-0.4.0/ext/xxhash
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 xxhash.so ./.gem.20171128-19293-rxguuo/xxhash
