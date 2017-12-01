@@ -4,6 +4,6 @@ class ParserWorker
   include Sidekiq::Worker
 
   def perform
-    Articles::ToPublish.new.execute
+    YaNews::GetPars.new.execute
   end
 end   

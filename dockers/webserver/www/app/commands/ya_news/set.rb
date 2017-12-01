@@ -13,6 +13,7 @@ module YaNews
       redis.set('last_ya_h', last_ya_h_new)
       info = (@news_info.merge({time: Time.now.to_i})).to_json
       redis.set('last_ya', info)
+      Articles::ToPublish.new.execute
       nil
     end
   end
