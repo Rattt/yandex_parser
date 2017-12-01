@@ -5,5 +5,4 @@ if [ -f tmp/pids/server.pid ]; then
 fi
 ls -la
 bundle exec sidekiq -d -L log/sidekiq.log
-#bundle exec rails s -p 3000 -b 0.0.0.0
-sleep infinity
+bundle exec rails s -p 3000 -b 0.0.0.0
