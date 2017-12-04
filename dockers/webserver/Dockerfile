@@ -17,8 +17,9 @@ RUN dnf install nodejs -y
 RUN dnf install gcc-c++ patch readline readline-devel zlib zlib-devel \
     libyaml-devel libffi-devel openssl-devel make \
     bzip2 autoconf automake libtool bison gcc glibc sqlite-devel \
-    postgresql-devel ruby-devel -y
+    postgresql-devel ruby-devel fontconfig -y
 RUN dnf install git -y
+ADD phantomjs-2.1.1-linux-x86_64/bin/phantomjs /usr/bin/phantomjs
 
 RUN     adduser $APP_USER 
 USER    $APP_USER
