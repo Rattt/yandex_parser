@@ -1,9 +1,0 @@
-module Articles
-  class PublishToM
-    
-    def execute
-
-    end
-
-  end
-end
