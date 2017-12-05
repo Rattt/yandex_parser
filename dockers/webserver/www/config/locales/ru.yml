@@ -1,0 +1,6 @@
+ru:
+  date:
+    order: Порядок
+  articles:
+    create:
+      notice: Article was successfully destroyed.

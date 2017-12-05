@@ -1,4 +1,5 @@
-%h2 Editing first article
+%h2 
+  = t 'title.article.edit_first'
 = bootstrap_form_for @article, label_col: 'col-xs-4', control_col: 'col-xs-10', url: admin_article_path(@article) do |f|
   = render 'fields', f: f
 %br

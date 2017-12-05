@@ -11,7 +11,8 @@ module Www
     config.eager_load_paths += Dir["#{config.root}/app/commands/"]
     config.eager_load_paths += Dir["#{config.root}/app/services/"]
 
-
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}').to_s]
+    config.i18n.default_locale = :en
 
     logger           = ActiveSupport::Logger.new(STDOUT)
     logger.formatter = config.log_formatter

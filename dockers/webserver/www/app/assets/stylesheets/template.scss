@@ -24,6 +24,10 @@ body {
   font-family: $font_0, $font_1, $font_2;
 }
 
+nav.navbar {
+  margin-bottom: 0px;
+}
+
 header.bg-primary {
   background-color: $header_color !important;
 }
@@ -48,4 +52,9 @@ footer {
   padding: 1rem;
   background-color: $gallery;
   text-align: center;
+}
+
+.alerts {
+  margin-top: 10px;
+  position: relative;
 }

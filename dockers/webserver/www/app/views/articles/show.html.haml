@@ -3,8 +3,10 @@
     %h1
       = @article.title
     %p.lead
-    %p{class: (@article.is_yandex ? 'ya' : 'ya hidden')}Новость была добавлена с Yandex News
-    %p{class: (@article.is_yandex ? 'no_ya hidden' : 'no_ya')}Новость была создана редакцией
+    %p{class: (@article.is_yandex ? 'ya' : 'ya hidden')}
+      = t '.with_yandex'
+    %p{class: (@article.is_yandex ? 'no_ya hidden' : 'no_ya')}
+      = t '.customer_article'
 
 %section#about
   .container

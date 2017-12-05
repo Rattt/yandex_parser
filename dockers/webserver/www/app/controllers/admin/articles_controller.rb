@@ -22,7 +22,7 @@ module Admin
       @article = Article.new(article_params)
       respond_to do |format|
         if @article.save
-          format.html {redirect_to admin_articles_path, notice: 'Article was successfully created.'}
+          format.html {redirect_to admin_articles_path, notice: t('.notice')}
         else
           format.html {render :new}
         end
@@ -33,7 +33,7 @@ module Admin
     def update
       respond_to do |format|
         if @article.update(article_params)
-          format.html {redirect_to admin_articles_path, notice: 'Article was successfully updated.'}
+          format.html {redirect_to admin_articles_path, notice: t('.notice')}
         else
           format.html {render :edit}
         end
@@ -44,18 +44,16 @@ module Admin
     def destroy
       @article.destroy
       respond_to do |format|
-        format.html { redirect_to admin_articles_path, notice: 'Article was successfully destroyed.' }
+        format.html {redirect_to admin_articles_path, notice: t('.notice')}
       end
     end
 
-
     private
-    # Use callbacks to share common setup or constraints between actions.
+
     def set_article
       @article = Article.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def article_params
       params.fetch(:article).permit(:title, :description, :expired_at)
     end

@@ -1,5 +1,6 @@
 %section.container
-  %h1.text-center New article
+  %h1.text-center 
+    = page_title
   = bootstrap_form_for @article, label_col: 'col-xs-4', control_col: 'col-xs-10', url: admin_articles_path(@article) do |f|
     = render 'fields', f: f
-  = link_to 'Back', admin_articles_path, class: 'btn btn-primary text-center'
+  = link_to t('actions.back'), admin_articles_path, class: 'btn btn-primary text-center'

@@ -2,25 +2,33 @@
   - if @article.persisted?
     = render 'edit_first'
 
-  %h2.text-center All articles
+  %h2.text-center 
+    = page_title
+  - I18n.with_options(scope: 'activerecord.attributes.article') do |art|
+    %table.table.table-striped
+      %thead
+        %tr
+          %th 
+            = art.t :title
+          %th 
+            = art.t :description
+          %th 
+            = art.t :expired_at
+          %th 
+            = art.t :created_at
+          %th 
+            = art.t :updated_at
+          %th 
+            = t 'actions.action'
 
-  %table.table.table-striped
-    %thead
-      %tr
-        %th Title
-        %th Description
-        %th Expired_at
-        %th Created_at
-        %th Updated_at
-        %th Actions
-
-    %tbody
-      - if @articles.present?
-        = render @articles
-      - else
+      %tbody
+        - if @articles.present?
+          = render @articles
+        - else
+          %tr
+            %td{colspan: 6}
+              %p 
+                = t('.news_em')
         %tr
           %td{colspan: 6}
-            %p Авторских новостей пока нет.
-      %tr
-        %td{colspan: 6}
-          = link_to 'New', new_admin_article_path, class: 'btn btn btn-success'
+            = link_to 'New', new_admin_article_path, class: 'btn btn btn-success'
