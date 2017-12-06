@@ -35,7 +35,7 @@ gem 'sidekiq-scheduler'
 
 group :development, :test do
   gem 'rubocop', '~> 0.51.0', require: false
-  gem 'overcommit'
+  gem 'overcommit', require: false
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'selenium-webdriver'
   gem 'factory_girl_rails'
@@ -46,6 +46,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'ast'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
   gem 'spring'
