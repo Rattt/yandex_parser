@@ -1,6 +1,5 @@
 # Yandex News
 [![Code Climate](https://codeclimate.com/github/Rattt/yandex_parser.png)](https://codeclimate.com/github/Rattt/yandex_parser)
-[![Build Status](https://travis-ci.org/Rattt/yandex_parser.svg?branch=master)](https://travis-ci.org/Rattt/yandex_parser) 
 
 ## Description
 Реализуйте web-приложение (Rails проект), которое состоит из двух страниц: / и /admin. На странице / отображается первая главная новость из ленты Яндекса. Новость выводится в свободном виде, содержит дату, заголовок и аннотацию. Приложение фоновым скриптом периодически обновляет текущую главную новость. При обновлении главной новости в приложении она обновляется на всех открытых в текущий момент страницах /.
@@ -13,5 +12,6 @@ Web-приложение должно корректно работать в б�
 ## Installation
 * `docker-compose build`
 * `docker-compose up -d`
+ждем 5 минут
 * `docker exec testwork_web_1  bash -l -c "bundle exec rake db:migrate"`
 * `docker exec testwork_web_1  bash -l -c "RAILS_ENV=test && bundle exec rspec spec"`
