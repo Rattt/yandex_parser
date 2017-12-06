@@ -271,6 +271,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ast
   bootstrap (~> 4.0.0.beta2.1)
   bootstrap-generators (~> 3.3.4)
   bootstrap_forms
