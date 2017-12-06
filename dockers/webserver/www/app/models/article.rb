@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Article
 class Article < ApplicationRecord
   after_save :reload_edit
   before_destroy :reload_destroy
@@ -6,7 +9,7 @@ class Article < ApplicationRecord
   validates :description, presence: true
 
   def self.last_by_expired
-    where("expired_at > ?", DateTime.now).order(expired_at: :desc).first
+    where('expired_at > ?', Time.now).order(expired_at: :desc).first
   end
 
   def is_yandex
@@ -20,14 +23,10 @@ class Article < ApplicationRecord
   end
 
   def reload_edit
-    if (Article.count == 0 || active?(self))
-      Articles::ToPublish.new.execute
-    end
+    Articles::ToPublish.new.execute if Article.count.zero? || active?(self)
   end
 
   def reload_destroy
-    if ( Article.count == 1 ||  active?(self))
-      Articles::ToPublish.new.execute
-    end
+    Articles::ToPublish.new.execute if Article.count == 1 || active?(self)
   end
 end

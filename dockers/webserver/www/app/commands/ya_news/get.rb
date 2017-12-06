@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module YaNews
+  # Get last news will be parsed or new
   class Get
     def execute
       redis = ::RedisConnect.get
@@ -7,7 +10,8 @@ module YaNews
       str = redis.get('last_ya')
       return if str.nil?
       y_hash = JSON.parse(str).with_indifferent_access
-      OpenStruct.new(y_hash.merge({is_yandex: true}))
+      yandex = { is_yandex: true }
+      OpenStruct.new(y_hash.merge(yandex))
     end
   end
 end

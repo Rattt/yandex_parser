@@ -1,5 +1,6 @@
-FactoryGirl.define do
+# frozen_string_literal: true
 
+FactoryGirl.define do
   sequence :title do |n|
     Faker::Book.title + n.to_s
   end
@@ -7,13 +8,8 @@ FactoryGirl.define do
   factory :article do |f|
     f.title
     f.description { Faker::VForVendetta.speech }
-    f.expired_at { DateTime.strptime((Time.now.to_i + 86400).to_s,'%s') }
-    f.created_at { DateTime.now }
-    f.updated_at { DateTime.now }
+    f.expired_at { Time.at(Time.now.to_i + 86400) }
+    f.created_at { Time.now }
+    f.updated_at { Time.now }
   end
-
-  trait :old_article do
-    expired_at { DateTime.strptime((Time.now.to_i - 10).to_s,'%s') }
-  end
-
 end

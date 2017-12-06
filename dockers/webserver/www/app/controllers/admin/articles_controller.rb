@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module Admin
+  # ArticleController
   class ArticlesController < ApplicationController
     before_action :set_article, only: [:edit, :update, :destroy]
 
@@ -14,17 +17,16 @@ module Admin
     end
 
     # GET /articles/1/edit
-    def edit
-    end
+    def edit; end
 
     # POST /articles
     def create
       @article = Article.new(article_params)
       respond_to do |format|
         if @article.save
-          format.html {redirect_to admin_articles_path, notice: t('.notice')}
+          format.html { redirect_to admin_articles_path, notice: t('.notice') }
         else
-          format.html {render :new}
+          format.html { render :new }
         end
       end
     end
@@ -33,9 +35,9 @@ module Admin
     def update
       respond_to do |format|
         if @article.update(article_params)
-          format.html {redirect_to admin_articles_path, notice: t('.notice')}
+          format.html { redirect_to admin_articles_path, notice: t('.notice') }
         else
-          format.html {render :edit}
+          format.html { render :edit }
         end
       end
     end
@@ -44,7 +46,7 @@ module Admin
     def destroy
       @article.destroy
       respond_to do |format|
-        format.html {redirect_to admin_articles_path, notice: t('.notice')}
+        format.html { redirect_to admin_articles_path, notice: t('.notice') }
       end
     end
 

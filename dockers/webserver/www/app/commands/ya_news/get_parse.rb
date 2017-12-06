@@ -1,18 +1,18 @@
-module YaNews
-  class GetParse
+# frozen_string_literal: true
 
+module YaNews
+  # Parse news from Yandex
+  class GetParse
     YANDEX_NEWS = 'https://www.yandex.ru/'
     PARSER_PATH = Rails.root.join('parser.js')
 
     def execute
-      begin
-        news_info = first_article
-        ::YaNews::Set.new(news_info).execute
-      rescue StandardError => e
-        logger = LogConnect.get
-        logger.error 'YaNews::GetParse: ошибка может быть вызвана устареванием селектора'
-        logger.error "YaNews::GetParse: #{e.message}"
-      end
+      news_info = first_article
+      ::YaNews::Set.new(news_info).execute
+    rescue StandardError => e
+      logger = LogConnect.get
+      logger.error 'YaNews::GetParse: ошибка может быть вызвана устареванием селектора'
+      logger.error "YaNews::GetParse: #{e.message}"
     end
 
     private
@@ -29,7 +29,7 @@ module YaNews
       title, description = ['h1.story__head', 'div.doc__text'].map do |selector|
         html.css(selector).first.text
       end
-      {title: title, description: description}
+      { title: title, description: description }
     end
 
     def get_content(url)
@@ -37,4 +37,3 @@ module YaNews
     end
   end
 end
-

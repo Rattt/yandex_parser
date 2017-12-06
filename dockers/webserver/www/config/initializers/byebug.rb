@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 =begin
 if Rails.env.development?
   (-> do
@@ -28,5 +30,3 @@ if Rails.env.development?
   end).call
 end
 =end
-
-

@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
+# Seo module
 module SeoHelper
- def page_title
+  def page_title
     t page_title_translation_key,
-      page_title_context.merge(:default => :"title.default")
+      page_title_context.merge(default: :'title.default')
   end
 
   def page_title_translation_key

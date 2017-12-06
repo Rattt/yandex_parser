@@ -1,3 +1,5 @@
+# frozen_string_literal: tru
+
 select_db = ENV['SIDEKIQ_REDIS_DB']
 select_db = ENV['SIDEKIQ_TEST_REDIS_DB'] if Rails.env.test?
 host = ENV['REDIS_HOST']
