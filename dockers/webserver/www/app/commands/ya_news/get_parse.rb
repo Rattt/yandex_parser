@@ -7,7 +7,9 @@ module YaNews
     PARSER_PATH = Rails.root.join('parser.js')
 
     def execute
-      news_info = first_article
+      url = article_url
+      return if parsed?(url)
+      news_info = first_article(url)
       ::YaNews::Set.new(news_info).execute
     rescue StandardError => e
       logger = LogConnect.get
@@ -24,8 +26,8 @@ module YaNews
       article_link[:href]
     end
 
-    def first_article
-      html = Nokogiri::HTML(get_content(article_url))
+    def first_article(url)
+      html = Nokogiri::HTML(get_content(url))
       title, description = ['h1.story__head', 'div.doc__text'].map do |selector|
         html.css(selector).first.text
       end
@@ -34,6 +36,15 @@ module YaNews
 
     def get_content(url)
       `phantomjs #{PARSER_PATH} #{url}`
+    end
+
+    def parsed?(url)
+      redis = ::RedisConnect.get
+      last_ya_h = redis.get('last_ya_h') || ''
+      last_ya_h_new = XXhash.xxh32(url)
+      return true if last_ya_h_new == last_ya_h
+      redis.set('last_ya_h', last_ya_h_new)
+      false
     end
   end
 end
