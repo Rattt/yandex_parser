@@ -1,4 +1,5 @@
 # Yandex News
+[![Code Climate](https://codeclimate.com/github/Rattt/yandex_parser.png)](https://codeclimate.com/github/Rattt/yandex_parser)
 [![Build Status](https://travis-ci.org/Rattt/yandex_parser.svg?branch=master)](https://travis-ci.org/Rattt/yandex_parser) 
 
 ## Description

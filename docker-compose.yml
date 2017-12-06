@@ -2,8 +2,8 @@ version: '2'
 
 services:
   web:
-    build: ./dockers/webserver
-    image: web_yand_news
+    # build: ./dockers/webserver
+    image: ihmoroz/web_yand_news
     ports:
       - "3000:3000"
       - "1048:1048"
