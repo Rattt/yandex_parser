@@ -8,7 +8,8 @@ module Admin
     # GET /articles
     def index
       @article = Article.last_by_expired || Article.new
-      @articles = Article.order(expired_at: :desc)
+      @articles = Article.order(created_at: :desc, expired_at: :desc)
+        .paginate(page: params[:page], per_page: 10)
     end
 
     # GET /articles/new

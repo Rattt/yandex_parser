@@ -4,6 +4,7 @@
 
   %h2.text-center 
     = page_title
+  = will_paginate @articles
   - I18n.with_options(scope: 'activerecord.attributes.article') do |art|
     %table.table.table-striped
       %thead
@@ -32,3 +33,4 @@
         %tr
           %td{colspan: 6}
             = link_to 'New', new_admin_article_path, class: 'btn btn btn-success'
+  = will_paginate @articles

@@ -128,3 +128,11 @@ Naming/PredicateName:
   Exclude:
     - 'spec/**/*'
     - 'app/models/article.rb'
+
+# Offense count: 1
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles, IndentationWidth.
+# SupportedStyles: aligned, indented, indented_relative_to_receiver
+Layout/MultilineMethodCallIndentation:
+  Exclude:
+    - 'app/controllers/admin/articles_controller.rb'  
