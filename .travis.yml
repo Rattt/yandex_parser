@@ -1,0 +1,11 @@
+sudo: required
+language: ruby
+services:
+  - docker
+
+before_install: 
+  - docker-compose build
+  - docker-compose up -d
+  - docker exec testwork_web_1  bash -l -c "bundle exec rake db:migrate"
+script:
+  - docker exec testwork_web_1  bash -l -c "RAILS_ENV=test && bundle exec rspec spec/"
