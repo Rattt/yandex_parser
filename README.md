@@ -1,5 +1,5 @@
 # Testwork Fanbox
-***
+
 ## Level 3 Q2 Задание:
 > <https://dl.fun-box.ru/qt-ruby.pdf> 
 
